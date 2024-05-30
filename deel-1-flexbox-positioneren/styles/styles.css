@@ -1,1 +1,47 @@
 /*Schrijf hier jouw CSS*/
+
+.opdracht-1  > ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*height: 300px;*/
+
+  & li {
+    /*border: 2px solid red;*/
+
+  }
+}
+
+.opdracht-2 ul{
+  display: flex;
+  flex-direction: row;
+
+  & li {
+    flex-basis:100%;
+  }
+}
+
+
+.opdracht-3 {
+  height: unset;
+}
+.opdracht-3 ul {
+  height: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.top {
+  align-self: flex-start;
+}
+
+.center {
+  align-self: center;
+}
+
+.bottom {
+  align-self: flex-end;
+}
