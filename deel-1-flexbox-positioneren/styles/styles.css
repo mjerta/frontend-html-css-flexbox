@@ -1,6 +1,6 @@
 /*Schrijf hier jouw CSS*/
 
-.opdracht-1  > ul{
+.opdracht-1 > ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,12 +12,12 @@
   }
 }
 
-.opdracht-2 ul{
+.opdracht-2 ul {
   display: flex;
   flex-direction: row;
 
   & li {
-    flex-basis:100%;
+    flex: 1;
   }
 }
 
@@ -25,23 +25,61 @@
 .opdracht-3 {
   height: unset;
 }
+
 .opdracht-3 ul {
-  height: 130px;
+  height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
+  & .top {
+    align-self: flex-start;
+  }
+
+  & .center {
+    align-self: center;
+  }
+
+  & .bottom {
+    align-self: flex-end;
+  }
+
 }
 
-.top {
-  align-self: flex-start;
+.opdracht-4 ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.center {
-  align-self: center;
+.opdracht-5 div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+
+  & ul:nth-child(1) {
+    align-items: flex-start;
+  }
+
+  & ul:nth-child(2) {
+    align-items: center;
+  }
+
+  & ul:nth-child(3) {
+    align-items: flex-end;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    & li {
+    }
+  }
 }
 
-.bottom {
-  align-self: flex-end;
-}
+
