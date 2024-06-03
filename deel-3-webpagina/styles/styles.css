@@ -12,6 +12,8 @@
   --article-background: #C16E70;
   --dark-text-color: #000;
   --bright-text-color: #fff;
+  /*default spacing*/
+  --primary-padding: 2.5rem
 }
 
 body {
@@ -21,71 +23,78 @@ body {
   min-height: 100vh;
   background-color: var(--primary-color);
   font-family: "Montserrat", Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 header {
   width: 100%;
-  flex: 0 0 10vh;
+  flex: 0 0 auto;
   display: flex;
-  flex-direction: column;
-
-}
-
-.inner-wrapper {
-  display: flex;
-  flex: 1 0 auto;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+  justify-content: center;
+  padding: 0 var(--primary-padding);
   background-color: var(--secondary-color);
   color: var(--bright-text-color);
 
-  .logo {
-    text-transform: uppercase;
-  }
 
-  & nav {
-    flex: 0 0 auto;
+  .inner-wrapper {
+    display: flex;
+    flex: 0 1 1440px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    & ul {
-      display: flex;
-      flex-direction: row;
-      column-gap: 2rem;
-
-
-      & li {
-        list-style: none;
-        text-transform: capitalize;
-
-        & a {
-          text-decoration: none;
-          color: unset;
-        }
-      }
+    .logo {
+      text-transform: uppercase;
     }
 
+    & nav {
+      flex: 0 0 auto;
+      padding: var(--primary-padding) 0;
+
+      & ul {
+        display: flex;
+        flex-direction: row;
+        column-gap: 3rem;
+
+
+        & li {
+          list-style: none;
+          text-transform: capitalize;
+
+          & a {
+            text-decoration: none;
+            color: unset;
+          }
+        }
+      }
+
+    }
   }
 }
 
-.wrapper {
+.main-content {
   flex: 0 1 auto;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
+  padding: 0 var(--primary-padding) var(--primary-padding) var(--primary-padding);
 
   & .upper-row {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: var(--secondary-color);
 
     & h1 {
       padding: 3rem 0 .5rem 0;
+      font-size: 1.2rem;
     }
 
     & h3 {
       font-size: .9rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -96,19 +105,18 @@ header {
     flex: 0 0 auto;
     column-gap: 2rem;
     row-gap: 2rem;
-    padding-top: 4rem;
-    /*flex-wrap: wrap;*/
-
 
     & .article-content {
-      flex: 0 1 calc(280rem / 16);
+      flex: 0 1 calc(280rem / 16); /* required width of 280px, I like to work with rems tough. So that the calcuation is for. */
       display: flex;
       flex-direction: row;
       align-items: flex-end;
+      /* required height. I have put this on min-height so it is able to grow as well as the box gets smaller */
       min-height: calc(350rem / 16);
       overflow: hidden;
       background-color: var(--article-background);
       padding: 6rem 1.5rem 1rem 1.5rem;
+      border-radius: 4px;
     }
   }
 
