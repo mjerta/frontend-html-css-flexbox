@@ -1,1 +1,49 @@
-/*Schrijf hier jouw CSS*/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+.outer-col-1 {
+  flex: 0 0 20vw; /* shorthand for flex-shrink & flex-grow & flex-basis */
+}
+
+.outer-col-2 {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
+  & header {
+    flex: 0 0 10rem;
+  }
+
+  .inner-row {
+    display: flex;
+    flex-direction: row;
+    flex:1 1 auto;
+
+    & .inner-col {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+
+      & article {
+        flex: 1 1 auto;
+      }
+
+      & footer {
+        flex: 0 0 10rem
+      }
+    }
+
+    & aside {
+      flex: 0 0 20vw;
+    }
+  }
+}
+

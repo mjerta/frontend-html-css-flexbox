@@ -1,1 +1,43 @@
-/*Schrijf hier jouw CSS*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.col-1 {
+  /* The following will make sure the element will not grow or shrink, but it will be managed by viewport width to increase or decrease based on the screen width*/
+  flex: 0 0 15vw;
+  height: auto;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto; /* This would let col-2 grow to what with is left. */
+
+  header {
+    flex: 0 0 10rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row; /* default */
+    flex: 1 1 auto; /* This would let main grow to what height is left. */
+
+    & article {
+      flex-basis: 100%;
+    }
+  }
+
+
+  footer {
+    flex: 0 0 10rem;
+  }
+}
+
